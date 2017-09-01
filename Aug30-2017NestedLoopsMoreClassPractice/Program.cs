@@ -79,6 +79,104 @@ namespace Aug30_2017NestedLoopsMoreClassPractice
             //print them out, except ones starting with a vowel
             //hint: "startsWith()" ** look it up **
 
+            Console.WriteLine("\nHere's a list of some of your favorite movies.\n");
+
+            string[] movies = { "Raiders", "Working Girl", "Octopussy", "A Little Romance", "The Fifth Element" };
+            string[] vowels = { "a", "e", "i", "o", "u" };
+
+            //foreach (string movie in movies) 
+            //foreach(string vowel in vowels)   
+            {
+                //Console.WriteLine(movie);
+
+                //for (int i = 0; i < movies.Length; i++)
+                //{
+
+                //}
+
+                //foreach (string vowel in vowels)
+                foreach (string movie in movies)
+
+                    foreach (string vowel in vowels)
+                        {
+
+                        if (movie.StartsWith(vowel))
+                        {
+                            continue;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine(movie);
+                        }
+                    }
+            }
+            //you're on the right track, but you need something like a bool in there. 
+            //eh i keep getting different info.
+            //the good news: Jackie tried the exact same thing, and got the same result I did
+
+
+            //moving on...
+
+            //ask a student for grades to calculate GPA
+
+            Console.WriteLine("\nLet's calculate your GPA this semester.\n");
+
+            bool hasMoreClasses = true;
+            double gradeValue = 0;
+            double gradeSum = 0;
+            double numberOfClasses = 0;
+
+            while (hasMoreClasses == true)
+            {
+                Console.WriteLine("Please enter one letter grade.");
+                char letterGrade = char.Parse(Console.ReadLine());
+
+                switch (letterGrade)
+                {
+                    case 'a':
+                        gradeValue = 4.0;
+                        break;
+                    case 'b':
+                        gradeValue = 3.0;
+                        break;
+                    case 'c':
+                        gradeValue = 2.0;
+                        break;
+                    case 'd':
+                        gradeValue = 1.0;
+                        break;
+                    default:
+                        gradeValue = 0;
+                        Console.WriteLine("Dummy!");
+                        break;
+
+                }
+
+                Console.WriteLine($"That letter grade is a {gradeValue}.");
+                numberOfClasses++;
+
+                gradeSum += gradeValue; 
+
+                Console.WriteLine("\nDo you have another grade to enter? yes/no");
+                string userAnswer = Console.ReadLine();
+
+                if (userAnswer == "yes")
+                {
+                    hasMoreClasses = true;
+                }
+
+                else if (userAnswer == "no")
+                {
+                    hasMoreClasses = false;
+                }
+            }
+
+            double gradeAverage = gradeSum / numberOfClasses;
+            Console.WriteLine($"Your GPA is {gradeAverage}.");
+
+            //still working on this one.
+
             Console.WriteLine();
             Console.ReadLine();
         }
