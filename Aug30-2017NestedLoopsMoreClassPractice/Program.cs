@@ -175,8 +175,6 @@ namespace Aug30_2017NestedLoopsMoreClassPractice
             double gradeAverage = gradeSum / numberOfClasses;
             Console.WriteLine($"Your GPA is {gradeAverage}.");
 
-            //still working on this one.
-
             Console.WriteLine();
             Console.ReadLine();
         }
